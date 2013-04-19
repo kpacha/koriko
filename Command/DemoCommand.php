@@ -19,7 +19,7 @@ class DemoCommand extends KorikoCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $recipe = new DemoRecipe;
+        $recipe = new DemoRecipe($this->_container);
         $recipe->cook();
     }
 }
