@@ -1,0 +1,10 @@
+#!/usr/bin/env php
+# app/console
+<?php
+
+require_once dirname(__DIR__) . '/vendor/autoload.php';
+
+use Oridoki\Koriko\App\KorikoApplication;
+
+$application = new KorikoApplication('Koriko', null, array());
+$application->run();
