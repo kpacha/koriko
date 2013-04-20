@@ -6,6 +6,7 @@ use Cilex\Application as CilexApplication;
 use Oridoki\Koriko\App\Provider\LogServiceProvider;
 use Oridoki\Koriko\App\Provider\ConfigServiceProvider;
 use Oridoki\Koriko\App\Provider\CommandServiceProvider;
+use Oridoki\Koriko\App\Provider\ConnectionHelperServiceProvider;
 
 class KorikoApplication extends CilexApplication
 {
@@ -28,6 +29,7 @@ class KorikoApplication extends CilexApplication
         $this->_registerConfigServiceProvider($values);
         $this->_registerLogServiceProvider($values);
         $this->_registerDefaultCommandServiceProvider($values);
+        $this->_registerConnectionHelperServiceProvider($values);
     }
 
     protected function _registerConfigServiceProvider($values)
@@ -43,6 +45,11 @@ class KorikoApplication extends CilexApplication
     protected function _registerDefaultCommandServiceProvider($values)
     {
         $this->register(new CommandServiceProvider, $values);
+    }
+
+    protected function _registerConnectionHelperServiceProvider($values)
+    {
+        $this->register(new ConnectionHelperServiceProvider, $values);
     }
 
     /**
