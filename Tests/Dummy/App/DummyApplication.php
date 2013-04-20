@@ -1,23 +1,21 @@
 <?php
 namespace Oridoki\Koriko\Tests\Dummy\App;
 
-use Oridoki\Koriko\App\Application;
+use Oridoki\Koriko\App\KorikoApplication;
 
 /**
  * Dummy extension of the koriko Application for testing purpouses
  *
  * @author Kpacha <kpacha666@gmail.com>
  */
-class DummyApplication extends Application
+class DummyApplication extends KorikoApplication
 {
-    const NAME = 'Dummy Deploy System';
 
     /**
-     * Simple DIC getter for testing
-     * @return \Pimple
+     * Expose the _loadCommands() method for testing
      */
-    public function getContainer()
+    public function loadCommands()
     {
-        return $this->_container;
+        $this->_loadCommands();
     }
 }
