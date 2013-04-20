@@ -6,7 +6,7 @@ use Cilex\ServiceProviderInterface;
 use Cilex\Application;
 use Cilex\Provider\MonologServiceProvider;
 
-class CommandServiceProvider extends MonologServiceProvider
+class LogServiceProvider extends MonologServiceProvider
     implements ServiceProviderInterface
 {
     const LOG_PATH = '/../logs/koriko.log';
