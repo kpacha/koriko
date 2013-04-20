@@ -2,10 +2,10 @@
 
 namespace Oridoki\Koriko\App;
 
-use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Command\Command as ConsoleCommand;
 use \Pimple;
 
-class KorikoCommand extends Command
+class Command extends ConsoleCommand
 {
     /**
      * The dependency injection container

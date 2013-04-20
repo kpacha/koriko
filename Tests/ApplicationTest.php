@@ -7,7 +7,7 @@ use Oridoki\Koriko\Command\DemoCommand;
 use Oridoki\Koriko\Tests\Dummy\Command\DummyCommand;
 use Oridoki\Koriko\Tests\Mocks;
 
-class KorikoApplicationTest extends \PHPUnit_Framework_TestCase
+class ApplicationTest extends \PHPUnit_Framework_TestCase
 {
     use Mocks;
 

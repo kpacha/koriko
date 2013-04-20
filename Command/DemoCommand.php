@@ -5,10 +5,10 @@ namespace Oridoki\Koriko\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-use Oridoki\Koriko\App\KorikoCommand;
+use Oridoki\Koriko\App\Command;
 use Oridoki\Koriko\Recipes\DemoRecipe;
 
-class DemoCommand extends KorikoCommand
+class DemoCommand extends Command
 {
     protected function configure()
     {

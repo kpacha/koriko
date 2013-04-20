@@ -8,7 +8,7 @@ use Oridoki\Koriko\App\Provider\ConfigServiceProvider;
 use Oridoki\Koriko\App\Provider\CommandServiceProvider;
 use Oridoki\Koriko\App\Provider\ConnectionHelperServiceProvider;
 
-class KorikoApplication extends CilexApplication
+class Application extends CilexApplication
 {
 
     /**

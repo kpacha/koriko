@@ -5,10 +5,10 @@ namespace Oridoki\Koriko\Tests\Dummy\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-use Oridoki\Koriko\App\KorikoCommand;
+use Oridoki\Koriko\App\Command;
 use Oridoki\Koriko\Tests\Dummy\Recipes\DummyRecipe;
 
-class DummyCommand extends KorikoCommand
+class DummyCommand extends Command
 {
     protected function configure()
     {
