@@ -3,6 +3,7 @@
 namespace Oridoki\Koriko\App;
 
 use Cilex\Application as CilexApplication;
+use Oridoki\Koriko\App\Provider\LogServiceProvider;
 use Oridoki\Koriko\App\Provider\ConfigServiceProvider;
 use Oridoki\Koriko\App\Provider\CommandServiceProvider;
 
@@ -21,18 +22,24 @@ class KorikoApplication extends CilexApplication
         
         $this->_registerDefaultProviders($values);
     }
-    
+
     protected function _registerDefaultProviders($values)
     {
         $this->_registerConfigServiceProvider($values);
+        $this->_registerLogServiceProvider($values);
         $this->_registerDefaultCommandServiceProvider($values);
     }
-    
+
     protected function _registerConfigServiceProvider($values)
     {
         $this->register(new ConfigServiceProvider, $values);
     }
-    
+
+    protected function _registerLogServiceProvider($values)
+    {
+        $this->register(new LogServiceProvider, $values);
+    }
+
     protected function _registerDefaultCommandServiceProvider($values)
     {
         $this->register(new CommandServiceProvider, $values);
