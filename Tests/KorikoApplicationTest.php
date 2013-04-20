@@ -13,9 +13,13 @@ class KorikoApplicationTest extends \PHPUnit_Framework_TestCase
 
     protected $_subject;
 
-    public function testCommandScan()
+    public function setUp()
     {
         $this->_subject = $this->_buildApp();
+    }
+
+    public function testCommandScan()
+    {
         $command = new DemoCommand;
         $this->assertInstanceOf(
                 '\Oridoki\Koriko\Command\DemoCommand',
@@ -32,6 +36,33 @@ class KorikoApplicationTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf(
                 '\Oridoki\Koriko\Tests\Dummy\Command\DummyCommand',
                 $this->_subject['console']->get($command->getName()));
+    }
+
+    public function testLoggerGeneration()
+    {
+        $this->_assertDependency('logger', '\Monolog\Logger');
+    }
+
+    public function testSshHelperGeneration()
+    {
+        $this->_assertDependency('ssh', '\Oridoki\Koriko\App\Ssh');
+    }
+
+    public function testConfigPathGeneration()
+    {
+        $this->assertNotNull($this->_subject['config.path']);
+    }
+
+    public function testConfigGeneration()
+    {
+        $this->assertNotNull($this->_subject['config']);
+    }
+
+    protected function _assertDependency($helperName, $helperClass)
+    {
+        $dependency = $this->_subject[$helperName];
+        $this->assertNotNull($dependency);
+        $this->assertInstanceOf($helperClass, $dependency);
     }
 
     protected function _buildApp(array $values = array())

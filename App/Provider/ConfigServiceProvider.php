@@ -9,7 +9,7 @@ use Cilex\Provider\ConfigServiceProvider as CilexConfigServiceProvider;
 class ConfigServiceProvider extends CilexConfigServiceProvider
     implements ServiceProviderInterface
 {
-    const CONFIG_PATH = '/../config/config.yml';
+    const CONFIG_PATH = '/../../config/config.yml';
 
     /**
      * Set up the default config path
