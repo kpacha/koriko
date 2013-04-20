@@ -9,7 +9,7 @@ use Cilex\Provider\MonologServiceProvider;
 class LogServiceProvider extends MonologServiceProvider
     implements ServiceProviderInterface
 {
-    const LOG_PATH = '/../logs/koriko.log';
+    const LOG_PATH = '/../../logs/koriko.log';
     const LOG_NAME = 'koriko';
 
     /**
@@ -31,5 +31,11 @@ class LogServiceProvider extends MonologServiceProvider
         }
 
         parent::register($app);
+
+        $app['logger'] = $app->share(
+            function () use ($app) {
+                return $app['monolog'];
+            }
+        );
     }
 }

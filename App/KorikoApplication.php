@@ -57,6 +57,7 @@ class KorikoApplication extends CilexApplication
      */
     protected function _loadCommands()
     {
+        $this['logger']->addDebug('loading commands');
         $commands = $this['command.finder']->getCommands();
         foreach ($commands as $command) {
             $this->command($command);
